@@ -4,3 +4,12 @@ node_modules
 /build
 /public/build
 .env
+
+.DS_Store
+
+/.cache
+/functions/\[\[path\]\].js
+/functions/\[\[path\]\].js.map
+/functions/metafile.*
+/public/build
+.dev.vars
