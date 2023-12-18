@@ -1,22 +1,30 @@
-# Welcome to Remix!
+# Remix Cloudflare Template
 
-- [Remix Docs](https://remix.run/docs)
-
-## Development
-
-You will be utilizing Wrangler for local development to emulate the Cloudflare runtime. This is already wired up in your package.json as the `dev` script:
+## Local Development
 
 ```sh
-# start the remix dev server and wrangler
+npm i
+
 npm run dev
 ```
 
-Open up [http://127.0.0.1:8788](http://127.0.0.1:8788) and you should be ready to go!
+## Deploy to Cloudflare
 
-## Deployment
+```sh
+npm run deploy
+```
 
-Cloudflare Pages are currently only deployable through their Git provider integrations.
+## Note
 
-If you don't already have an account, then [create a Cloudflare account here](https://dash.cloudflare.com/sign-up/pages) and after verifying your email address with Cloudflare, go to your dashboard and follow the [Cloudflare Pages deployment guide](https://developers.cloudflare.com/pages/framework-guides/deploy-anything).
+### Use "@remix-run/cloudflare" instead of "@remix-run/node"
 
-Configure the "Build command" should be set to `npm run build`, and the "Build output directory" should be set to `public`.
+This is an example error I faced.
+
+```sh
+    node_modules/cookie-signature/index.js:5:21:
+      5 │ var crypto = require('crypto');
+
+  The package "stream" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+```
+
+Using the wrangler requires using "@remix-run/cloudflare".
